@@ -1,9 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Footer from "./pages/Footer";
 import Navbar from "./pages/Navbar";
+import Gallery from "./pages/Gallery";
 
 function App() {
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <Gallery />
+      <Footer />
+    </>
+  );
 }
 
 export default App;
