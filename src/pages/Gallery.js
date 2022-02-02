@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import Header from "./Header";
 
 function Gallery() {
   const [data, setData] = useState([]);
@@ -13,7 +14,8 @@ function Gallery() {
   }, []);
   return (
     <section className="text-gray-400 bg-gray-900 body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-10 mx-auto">
+        <Header hname="Gallery" hdescription="Some Of Our Images" />
         <div className="flex flex-wrap -m-4">
           {data.map((item) => {
             return (
