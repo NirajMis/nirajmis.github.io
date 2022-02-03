@@ -1,4 +1,5 @@
 import "./App.css";
+import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import Gallery from "./pages/Gallery";
 import Hero from "./pages/Hero";
@@ -10,6 +11,7 @@ function App() {
       <Navbar />
       <Hero />
       <Gallery />
+      <Contact />
       <Footer />
     </>
   );
