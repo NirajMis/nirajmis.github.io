@@ -37,12 +37,26 @@ function Navbar() {
           </a>
         </div>
       </div>
-      <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+      <div className="flex-none lg:hidden">
+        <div class="dropdown dropdown-left">
+          <button className="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
+            <li>
+              <a>Gallery</a>
+            </li>
+            <li>
+              <a>Notifications</a>
+            </li>
+            <li>
+              <a>Files</a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   );
