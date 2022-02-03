@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+// This Component Will Be Rendered For Every Items In API
 function Card(props) {
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
@@ -26,14 +26,14 @@ function Card(props) {
       localStorage.setItem(id, (props.index) + 1);
     } else {
       setLiked(false)
+      // Removing Item From LocalStorage
+      localStorage.removeItem(id)
     }
   }
   // Dislike Is Clicked
   const dislikeClicked = () => {
     if (disliked === false) {
       setDisliked(true)
-      // Removing Item From LocalStorage
-      localStorage.removeItem(id)
     } else {
       setDisliked(false)
     }
