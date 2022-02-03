@@ -17,10 +17,10 @@ function Gallery() {
       <div className="container px-5 py-10 mx-auto">
         <Header hname="Gallery" hdescription="Some Of Our Images" />
         <div className="flex flex-wrap -m-4">
-          {data.map((item) => {
+          {data.map((item, index) => {
             return (
               <div className="p-4 md:w-1/4" key={item.key}>
-                <Card title={item.name} image={item.image} description={item.description} id={item.key} />
+                <Card title={item.name} image={item.image} description={item.description} id={item.key} index={index} />
               </div>
             );
           })}

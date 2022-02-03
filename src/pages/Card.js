@@ -1,21 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function Card(props) {
-  let likedItems = []
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
+  const id = props.id
+  // Get All Items From Local Storage
+  useEffect(() => { getKeys() }, []);
+  // Function getKeys
+  const getKeys = () => {
+    // Get All Keys
+    let lskeys = Object.keys(localStorage)
+    // Itreate Through Each Of Them
+    lskeys.forEach((element) => {
+      // If Localstorage keys === id setliked = true
+      if (element === props.id) {
+        setLiked(true);
+      }
+    });
+  }
+  // Like Is Clicked
   const likeClicked = () => {
     if (liked === false) {
       setLiked(true)
-      likedItems.push(props.id);
-      console.log(likedItems);
+      // Saving Only Key In LocalStorage With Value Index+1
+      localStorage.setItem(id, (props.index) + 1);
     } else {
       setLiked(false)
     }
   }
+  // Dislike Is Clicked
   const dislikeClicked = () => {
     if (disliked === false) {
       setDisliked(true)
+      // Removing Item From LocalStorage
+      localStorage.removeItem(id)
     } else {
       setDisliked(false)
     }
